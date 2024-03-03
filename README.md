@@ -9,3 +9,4 @@ selenium
 
 #### 使用方法
 ``python pest_chrome_v1.py``
+运行后弹出网页，需要扫码登录，若没有弹出二维码，请刷新浏览器
