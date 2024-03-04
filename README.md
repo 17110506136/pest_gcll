@@ -8,7 +8,7 @@
 ![image](https://github.com/17110506136/pest_gcll/assets/43081987/6973f5b6-6cdc-4dcc-9412-15df0a66647a)     
 ##### 2.去下面找到对应的驱动版本（120.xxx.xxx对应120.xxx.xxx)    
 [114以及之前的版本](https://registry.npmmirror.com/binary.html?path=chromedriver)     
-[115以及以后的测试版本](https://googlechromelabs.github.io/chrome-for-testing/)    
+[122以及以后的测试版本](https://googlechromelabs.github.io/chrome-for-testing/)    
 ##### 3.下载放置到Chrome安装目录C:\Program Files\Google\Chrome\Application    
 ![image](https://github.com/17110506136/pest_gcll/assets/43081987/8a848b6a-db17-4af6-85ad-226d68f63b1f)
 
