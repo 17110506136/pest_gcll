@@ -20,8 +20,12 @@ wait = WebDriverWait(driver, 10)
 # 登录
 driver.get(URL)
 time.sleep(1)
-driver.find_element(By.CLASS_NAME, "login-btn").click()
-time.sleep(2)
+# 等待元素可点击
+login_btn = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "login-btn")))
+
+# 执行点击操作
+login_btn.click()
+
 print("扫码登录")
 
 # 创建 ActionChains 对象
@@ -69,8 +73,6 @@ while True:
             print("开始找视频按钮")
             driver.find_element(By.CLASS_NAME, "xt_video_player_big_play_layer")
             print("有视频")
-            # 设置等待时间
-            wait = WebDriverWait(driver, 10)
 
             # 等待元素可点击
             element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "pause_show")))
