@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 import time
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 # @Author  : li and he
 
@@ -44,6 +45,7 @@ def monitor(driver):
         :param driver:
         :return None:
         """
+    print("开始监视播放进度")
     span_Xpath = "/html/body/div[4]/div[2]/div[2]/div[2]/div/div[2]/div[1]/div/section[1]/div[2]/div/div/span"
     while True:
         WCD = driver.find_element(By.XPATH, span_Xpath).text
@@ -67,10 +69,18 @@ while True:
             print("开始找视频按钮")
             driver.find_element(By.CLASS_NAME, "xt_video_player_big_play_layer")
             print("有视频")
-            time.sleep(2)
-            driver.find_element(By.CLASS_NAME, "pause_show").click()
+            # 设置等待时间
+            wait = WebDriverWait(driver, 10)
+
+            # 等待元素可点击
+            element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "pause_show")))
+
+            # 执行点击操作
+            element.click()
+            print("开始看视频")
             # 监视视频进度
             monitor(driver)
+
             #点击下一单元
             pyautogui.moveTo(location4['x'] + 15, location4['y'] + 130, 0.5)
             span_element.click()
